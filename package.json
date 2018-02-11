@@ -1,0 +1,29 @@
+{
+    "name": "nemoxps-util",
+    "version": "0.1.0",
+    "description": "A little library of useful functions that are missing in `lodash`.",
+    "keywords": [],
+    "author": "Pascal Hüttermann (https://github.com/nemoxps)",
+    "license": "MIT",
+    "main": "src/index.js",
+    "dependencies": {
+        "lodash": "^4.17.4"
+    },
+    "devDependencies": {
+        "browserify": "^14.3.0",
+        "eslint": "^4.15.0",
+        "eslint-config-nemoxps": "nemoxps/eslint-config-nemoxps#semver:^0.5.0",
+        "tape": "^4.8.0",
+        "blue-tape": "^1.0.0",
+        "tap-spec": "^4.1.1"
+    },
+    "scripts": {
+        "build:browser-test": "browserify test/*.test.js test/browser/*.test.js -o test/browser/_browser.js",
+        "build": "npm run build:browser-test",
+        "test:lint": "eslint ./",
+        "test:tape": "tape test/*.test.js test/node/*.test.js | tap-spec",
+        "test": "npm run --silent test:tape && npm run --silent test:lint"
+    },
+    "repository": "nemoxps/nemoxps-util",
+    "bugs": "https://github.com/nemoxps/nemoxps-util/issues"
+}
